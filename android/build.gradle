@@ -1,41 +1,44 @@
-
 buildscript {
     repositories {
-        jcenter()
+        google()
+        mavenCentral()
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.0'
+        classpath 'com.android.tools.build:gradle:8.7.0'
     }
 }
 
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "28.0.3"
+    namespace "com.toyberman.sslpinning" // kalau belum ada (WAJIB di AGP 8+)
+
+    compileSdkVersion 36
 
     defaultConfig {
-        minSdkVersion 16
-        targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion 24
+        targetSdkVersion 36
     }
-    lintOptions {
+
+    lint {
         abortOnError false
     }
 }
 
 repositories {
+    google()
     mavenCentral()
 }
 
 dependencies {
-   implementation "com.facebook.react:react-native:+"
-    implementation "com.squareup.okhttp3:okhttp:4.9.0"
-    implementation "com.squareup.okio:okio:2.6.0"
+    implementation "com.facebook.react:react-native:+"
+
+    implementation "com.google.android.material:material:1.11.0" // 🔥 penting
+
+    implementation "com.squareup.okhttp3:okhttp:4.12.0"
+    implementation "com.squareup.okio:okio:3.6.0"
     implementation "com.github.franmontiel:PersistentCookieJar:v1.0.1"
-    implementation "com.squareup.okhttp3:logging-interceptor:4.9.0"
-    implementation "com.squareup.okhttp3:okhttp-urlconnection:4.9.0"
+    implementation "com.squareup.okhttp3:logging-interceptor:4.12.0"
+    implementation "com.squareup.okhttp3:okhttp-urlconnection:4.12.0"
 }
-  
