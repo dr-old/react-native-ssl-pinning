@@ -12,7 +12,7 @@ buildscript {
 apply plugin: 'com.android.library'
 
 android {
-    namespace "com.toyberman.sslpinning" // kalau belum ada (WAJIB di AGP 8+)
+    namespace "com.toyberman" // kalau belum ada (WAJIB di AGP 8+)
 
     compileSdkVersion 36
 
@@ -23,6 +23,10 @@ android {
 
     lint {
         abortOnError false
+    }
+
+    buildFeatures {
+        buildConfig true   // 🔥 INI FIX UTAMA
     }
 }
 
